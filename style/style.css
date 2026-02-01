@@ -1,0 +1,92 @@
+.top-header{
+    background:#c5e3d8;
+    height:80px;
+    padding:10px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px #9abdb1;
+}
+
+body{
+    background: #dee3e3;
+}
+
+.top-header{
+    display: flex;
+    align-items: center; /* This forces all items to share a horizontal center line */
+    justify-content: center; /* Keeps them spaced correctly */
+    gap: 20px; /* Adjust spacing between items */
+}
+
+.top-header>div{
+    width: 33%;
+}
+
+.about{
+    margin-top:50px;
+}
+
+.main{
+    padding-top:10px;
+    border-radius: 20px;
+}
+
+.myself{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.google-sans-title {
+  font-family: "Google Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  font-variation-settings:
+    "GRAD" 0;
+    font-size: 300%; 
+}
+
+.main{
+    background: #eaebd8;
+    margin-top: 20px;
+    box-shadow: 5px 5px 10px #9fa18a;
+}
+
+.text{
+    text-align: center;
+    padding-left: 60px;
+    padding-right: 60px;
+    font-size: 200%;
+}
+
+.google-sans-text {
+  font-family: "Google Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "GRAD" 0;
+    font-size: 150%;
+    text-align: center;
+}
+
+.linkedin {
+  padding: 20px;
+  font-size: 45px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  justify-items: center;
+}
+
+.github {
+  padding: 20px;
+  font-size: 40px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  justify-items: center;
+}
