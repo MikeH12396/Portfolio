@@ -1,24 +1,33 @@
 .top-header{
-    background:#c5e3d8;
     height:80px;
     padding:10px;
     border-radius: 20px;
-    box-shadow: 5px 5px 10px #9abdb1;
-}
-
-body{
-    background: #dee3e3;
 }
 
 .top-header{
-    display: flex;
+    display: inline-flex;
+    width: 100%;
     align-items: center; /* This forces all items to share a horizontal center line */
     justify-content: center; /* Keeps them spaced correctly */
     gap: 20px; /* Adjust spacing between items */
+    color: #ffffff;
+    /* Optional: Adds a subtle shadow to make text pop against bright colors */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .top-header>div{
     width: 33%;
+}
+
+.master{
+margin: 0;
+  padding: 0;
+  /* A deeper, more atmospheric version of your original gradient */
+  background: radial-gradient(circle at top left, #2e1065, #0f172a 50%), 
+              radial-gradient(circle at bottom right, #0891b2, #0f172a 50%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif; /* A modern font helps the look */
 }
 
 .about{
@@ -26,11 +35,13 @@ body{
 }
 
 .main{
+    text-align: left;
     padding-top:10px;
     border-radius: 20px;
 }
 
 .myself{
+    text-align: left;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -48,13 +59,11 @@ body{
 }
 
 .main{
-    background: #eaebd8;
     margin-top: 20px;
-    box-shadow: 5px 5px 10px #9fa18a;
 }
 
 .text{
-    text-align: center;
+    text-align: left;
     padding-left: 60px;
     padding-right: 60px;
     font-size: 200%;
@@ -65,6 +74,7 @@ body{
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+  color: ghostwhite;
   font-variation-settings:
     "GRAD" 0;
     font-size: 150%;
@@ -89,4 +99,171 @@ body{
   text-decoration: none;
   margin: 5px 2px;
   justify-items: center;
+}
+
+/* Ensure anchors don't change layout on hover — use transforms instead */
+.top-header .linkedin a,
+.top-header .github a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  box-sizing: border-box;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+/* Hover transform (no layout shift) */
+.top-header .linkedin a:hover,
+.top-header .github a:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* Left tab (image + description) */
+.left-tab {
+  position: fixed;
+  left: 20px;
+  top: 100px;
+  width: 260px;
+  height: 85vh;
+  background: rgba(15, 23, 42, 0.6); /* Darker alpha for readability */
+  backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 40px 20px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.12);
+  z-index: 10;
+  /* The "Frost" effect */
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  color: #e2e8f0;
+}
+
+.left-tab:hover {
+  position: fixed;
+  left: 20px;
+  top: 130px;
+  width: 260px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.12);
+  z-index: 10;
+  /* The "Frost" effect */
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  transform:scale(1.05);
+  transition-duration: 200ms;
+}
+
+.left-tab .about { margin-bottom: 12px; text-align: center; }
+.left-tab .myself { width: 160px; height: auto; border-radius: 50%; display: block; margin: 0 auto; }
+.left-tab .about-me-text { font-size: 14px; text-align: left; color: #222; }
+
+/* Make main content clear of the fixed tab */
+.main {
+  margin-left: 320px;
+}
+
+/* Small screens: make tab static and full width */
+@media (max-width: 700px) {
+  .left-tab {
+    position: static;
+    width: auto;
+    border-radius: 10px;
+    margin: 16px;
+  }
+  .main {
+    margin-left: 0;
+  }
+}
+
+.card {
+    display: flex;
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background: rgba(255, 255, 255, 0.05); /* Very slight tint */
+  backdrop-filter: blur(16px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 20px; /* 5px rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  overflow: hidden; /* Keeps the top image rounded */
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  height: 443px;
+}
+
+.card-body{
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2); /* Slightly darker area for text */
+  text-align: center;
+}
+
+.card-custom{
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Brightens border on hover */
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.btn:hover{
+  background: white;
+  color: #0f172a;
+}
+
+.google-sans-text-title {
+  font-family: "Google Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "GRAD" 0;
+    font-size: 170%;
+    text-align: center;
+}
+
+.google-sans-text-card {
+  font-family: "Google Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "GRAD" 0;
+    font-size: 115%;
+    text-align: center;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+  background-color: linear-gradient(to right, #ec4899, #3b82f6);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
 }
